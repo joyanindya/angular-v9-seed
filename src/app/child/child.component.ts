@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { EventEmitter } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -6,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
+
+  @Output() 
+  login = new EventEmitter<boolean>();
+
+  loginOutput(login: boolean) {
+    this.login.emit(login);
+    console.log(login);
+}
 
   constructor() { }
 

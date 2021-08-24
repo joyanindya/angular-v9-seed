@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HeaderTitleService } from '../services/header-title.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
 
   userName: string = "Anindya";
   title:string;
+  @Input() user
 
   constructor(private headerTitle:HeaderTitleService) {
    }
